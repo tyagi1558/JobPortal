@@ -49,26 +49,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## API Integration
 
-The project integrates the following API to fetch job listings:
-
-```javascript
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-const body = JSON.stringify({
- "limit": 10,
- "offset": 0
-});
-
-const requestOptions = {
- method: "POST",
- headers: myHeaders,
- body
-};
-
-fetch("https://api.weekday.technology/adhoc/getSampleJdJSON", requestOptions)
- .then((response) => response.text())
- .then((result) => console.log(result))
- .catch((error) => console.error(error));
