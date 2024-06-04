@@ -32,9 +32,10 @@ const JobCard = ({ job }) => {
 
   const handleApplyClick = () => {
     if (applyLink) {
-      window.location.href = applyLink;
+      window.open(applyLink, '_blank');
     }
   };
+  
   const renderDescription = () => {
     // Remove HTML tags from the description
     const cleanDescription = description.replace(/<[^>]+>/g, '');

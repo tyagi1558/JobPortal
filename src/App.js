@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fetchJobListings from './jobService';
+import {fetchJobListings} from './jobService';
 import JobCard from './JobCard';
 import JobFilters from './JobFilters';
 
@@ -53,17 +53,18 @@ const App = () => {
 
   const applyFilters = (filters) => {
 
-    // const filteredJobs = allJobListings.filter(job => {
-    //   const minExperienceMatch = !filters.minExp || job.minExp >= parseInt(filters.minExp);
-    //   const companyNameMatch = !filters.companyName || job.companyName.toLowerCase().includes(filters.companyName.toLowerCase());
-    //   const jobRoleMatch = !filters.jobRole || job.jobRole.toLowerCase().includes(filters.jobRole.toLowerCase());
-    //   const locationMatch = !filters.location || job.location.toLowerCase().includes(filters.location.toLowerCase());
+    const filteredJobs = allJobListings.filter(job => {
+      const minExperienceMatch = !filters.minExperience || job.minExperience >= parseInt(filters.minExperience);
+      
+      const companyNameMatch = !filters.organisationName || job.organisationName.toLowerCase().includes(filters.organisationName.toLowerCase());
+      const jobRoleMatch = !filters.jobRole || job.jobRole.toLowerCase().includes(filters.jobRole.toLowerCase());
+      const locationMatch = !filters.city || job.city.toLowerCase().includes(filters.city.toLowerCase());
 
-    //   const minBasePayMatch = !filters.minJdSalary || job.minJdSalary >= parseInt(filters.minJdSalary);
-    //   return minExperienceMatch && companyNameMatch && locationMatch && minBasePayMatch && jobRoleMatch;
-    // });
+      const minBasePayMatch = !filters.minRange || job.minRange >= parseInt(filters.minRange);
+      return minExperienceMatch && companyNameMatch && locationMatch && minBasePayMatch && jobRoleMatch;
+    });
 
-    // setFilteredJobListings(filteredJobs);
+    setFilteredJobListings(filteredJobs);
   };
 
   return (
