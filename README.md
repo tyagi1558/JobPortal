@@ -49,14 +49,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## API Integration
 
-The project integrates the following API to fetch job listings:
-
-
-};
-
-fetch("https://api.weekday.technology/adhoc/getSampleJdJSON", requestOptions)
- .then((response) => response.text())
- .then((result) => console.log(result))
- .catch((error) => console.error(error));
